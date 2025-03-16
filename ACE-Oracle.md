@@ -26,3 +26,24 @@ cd c:\dbfree\dbhomeFree\bin
 sqlplus system@172.16.13.130:1521
 ```
 Disconnect with `exit`
+
+## Demo database
+
+### Create table
+
+```sql
+DROP TABLE DEPARTMENTS;
+
+CREATE TABLE DEPARTMENTS(
+ID VARCHAR (3) NOT NULL,
+DEPARTMENT_NAME VARCHAR (20) NOT NULL
+);
+
+INSERT INTO DEPARTMENTS VALUES('P01','Planning');
+INSERT INTO DEPARTMENTS VALUES('P02','Preparations');
+INSERT INTO DEPARTMENTS VALUES('M01','Manufacturing-1');
+INSERT INTO DEPARTMENTS VALUES('M02','Manufacturing-2');
+INSERT INTO DEPARTMENTS VALUES('C01','Control');
+INSERT INTO DEPARTMENTS VALUES('E01','Packaging');
+
+```
