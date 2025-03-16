@@ -45,5 +45,69 @@ INSERT INTO DEPARTMENTS VALUES('M01','Manufacturing-1');
 INSERT INTO DEPARTMENTS VALUES('M02','Manufacturing-2');
 INSERT INTO DEPARTMENTS VALUES('C01','Control');
 INSERT INTO DEPARTMENTS VALUES('E01','Packaging');
+```
 
+### Stored procedure
+
+Create procedure
+```sql
+CREATE OR REPLACE
+PROCEDURE NEW_DEPARTMENT
+( dep_id IN VARCHAR
+, dep_name IN VARCHAR
+) AS
+BEGIN
+  -- NULL;
+  INSERT INTO DEPARTMENTS VALUES(
+    NEW_DEPARTMENT.dep_id,
+    NEW_DEPARTMENT.dep_name
+  );
+END NEW_DEPARTMENT;
+/
+```
+
+List procedure
+```sql
+SELECT * FROM ALL_SOURCE WHERE TYPE = 'PROCEDURE' AND NAME = 'NEW_DEPARTMENT';
+```
+
+Invoke procedure
+```sql
+EXECUTE NEW_DEPARTMENT('X01','Test1');
+```
+
+Delete procedure
+```sql
+DROP PROCEDURE NEW_DEPARTMENT;
+```
+
+### Stored function
+
+Create function
+```sql
+CREATE OR REPLACE
+FUNCTION calculate_score
+( num1 IN NUMBER
+, num2 IN NUMBER
+) RETURN NUMBER AS
+BEGIN
+  RETURN num1 + num2;
+END calculate_score;
+/
+```
+List
+```sql
+SELECT * FROM ALL_SOURCE WHERE TYPE = 'FUNCTION' AND NAME = 'CALCULATE_SCORE';
+```
+
+Execute
+```sql
+var x number
+exec :x := CALCULATE_SCORE(1,3);
+print x;
+```
+
+Delete
+```sql
+DROP FUNCTION CALCULATE_SCORE;
 ```
