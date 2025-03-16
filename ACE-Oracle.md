@@ -2,7 +2,7 @@
 
 ## Download and install free version of Oracle database
 
-### Prepare folder
+### Prepare folder (Windows)
 ```bat
 :: Create folder
 mkdir c:\dbfree
@@ -13,7 +13,7 @@ icacls c:\dbfree /remove:g *s-1-5-11
 :: Start installation
 ```
 
-### Check permissions on existing folder
+### Check permissions on existing folder (Windows)
 ```bat
 icacls c:\dbfree
 :: Or using Explorer
