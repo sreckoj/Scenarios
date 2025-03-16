@@ -12,7 +12,7 @@ icacls c:\dbfree /inheritancelevel:d
 icacls c:\dbfree /remove:g *s-1-5-11
 ```
 
-### Check permissions on existing folder (Windows)
+Check permissions on existing folder:
 ```bat
 icacls c:\dbfree
 ```
